@@ -10,6 +10,16 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./sass/normalize.scss":
+/*!*****************************!*\
+  !*** ./sass/normalize.scss ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://bookshop/./sass/normalize.scss?");
+
+/***/ }),
+
 /***/ "./sass/styles.scss":
 /*!**************************!*\
   !*** ./sass/styles.scss ***!
@@ -26,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/styles.scss */ \"./sass/styles.scss\");\n\n\n//# sourceURL=webpack://bookshop/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_normalize_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/normalize.scss */ \"./sass/normalize.scss\");\n/* harmony import */ var _sass_styles_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../sass/styles.scss */ \"./sass/styles.scss\");\n\r\n\n\n//# sourceURL=webpack://bookshop/./src/index.js?");
 
 /***/ })
 

@@ -1,0 +1,22 @@
+@mixin open-sans-regular ($size, $line) {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: $size;
+    line-height: $line;
+}
+
+@mixin montserrat-medium ($size, $line) {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: $size;
+    line-height: $line;
+}
+
+@mixin montserrat-bold ($size, $line) {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: $size;
+    line-height: $line;
+}
+
+$base-red: red;

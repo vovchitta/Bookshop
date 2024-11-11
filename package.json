@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "build watch": "webpack --watch",
-    "sass": "sass scss:css",
-    "sass watch": "sass scss:css --watch",
+    "build:watch": "webpack --watch",
+    "sass": "sass sass:css",
+    "sass:watch": "sass sass:css --watch",
     "start:dev": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +15,8 @@
   "description": "",
   "devDependencies": {
     "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "html-webpack-plugin": "^5.6.3",
     "mini-css-extract-plugin": "^2.9.2",
     "sass": "^1.80.6",
     "sass-loader": "^16.0.3",
