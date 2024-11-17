@@ -1,22 +1,36 @@
-@mixin open-sans-regular ($size, $line) {
+@use 'sass:math';
+
+$max-width: 1440;
+$base-background-color: #FFFFFF;
+$base-font-bold-color: #1C2A39;
+$base-font-medium-color: #5C6A79;
+$base-buttons-color: #4C3DB2;
+$base-buttons-active-color: #EEEDF5;
+
+@mixin open-sans-regular($size, $line, $color: $base-font-medium-color) {
     font-family: 'Open Sans';
     font-weight: 400;
-    font-size: $size;
-    line-height: $line;
+    font-size: flex-size($size);
+    line-height: flex-size($line);
+    color: $color;
 }
 
-@mixin montserrat-medium ($size, $line) {
+@mixin montserrat-medium($size, $line, $color: $base-font-medium-color) {
     font-family: 'Montserrat';
     font-weight: 500;
-    font-size: $size;
-    line-height: $line;
+    font-size: flex-size($size);
+    line-height: flex-size($line);
+    color: $color;
 }
 
-@mixin montserrat-bold ($size, $line) {
+@mixin montserrat-bold($size, $line, $color: $base-font-bold-color) {
     font-family: 'Montserrat';
     font-weight: 700;
-    font-size: $size;
-    line-height: $line;
+    font-size: flex-size($size);
+    line-height: flex-size($line);
+    color: $color;
 }
 
-$base-red: red;
+@function flex-size($size) {
+    @return math.div($size, $max-width) * 100 * 1vw;
+}
