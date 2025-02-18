@@ -67,6 +67,9 @@
         }
 
         .header-user-panel__container {
+
+            position: relative;
+
             .header-user-panel__user {
                 width: flex-size(12);
                 height: flex-size(15);
@@ -78,8 +81,22 @@
             }
     
             .header-user-panel__shop-bag {
+                position: relative;
                 width: flex-size(13.68);
                 height: flex-size(17);
+            }
+
+            .cart {
+                position: absolute;
+                width: flex-size(13);
+                height: flex-size(13);
+                background-color: #FF353A;
+                top: flex-size(6);
+                left: flex-size(4);
+                border-radius: 50%;
+                @include montserrat-medium(10, 12.19);
+                color: #FFFFFF;
+                text-align: center;
             }
         }
     }
@@ -90,6 +107,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.header-burger__svg,
+.main-burger__svg {
+    width: flex-size(80);
+    height: flex-size(80);
 }
 
 .burger {
@@ -139,6 +162,10 @@
             background-color: #EFEEF6;
             border-radius: 50%;
             cursor: pointer;
+        }
+
+        .switcher:nth-child(1) {
+            background-color: #9E98DC;
         }
 
         .switcher:active {
@@ -217,16 +244,6 @@
             padding: 0;
         }
 
-        .sorting-list li:nth-child(1) {
-            @include montserrat-bold(16, 19.5);
-            background-image: url(../images/Ellipse.jpg);
-            background-position: 0 50%;
-            background-size: flex-size(6) flex-size(6);
-            background-repeat: no-repeat;
-            padding-left: flex-size(14);
-            margin-left: flex-size(146);
-        }
-
         .sorting-list li {
             margin-bottom: flex-size(23);
             margin-left: flex-size(160);
@@ -237,6 +254,18 @@
             @include montserrat-bold(16, 19.5);
         }
     }
+}
+
+.active {
+    @include montserrat-bold(16, 19.5);
+    position: relative;
+            background-image: url(../images/Ellipse.jpg);
+            background-position: 0 50%;
+            background-size: flex-size(6) flex-size(6);
+            background-repeat: no-repeat;
+            padding-left: flex-size(14);
+            margin-left: flex-size(146);
+            left: flex-size(-16);
 }
 
 .book-cards-table {
@@ -270,12 +299,14 @@
             background-image: url(../images/no-image.png);
             background-size: cover;
             box-shadow: 0px flex-size(24) flex-size(36) 0px #35315447;
-
         }
 
         .book-card__filling {
             width: flex-size(176);
             height: flex-size(203);
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
 
             .book-card__autor {
                 @include open-sans-regular(10, 13.62);
@@ -283,21 +314,43 @@
             }
 
             .book-card__name {
+                width: flex-size(176);
+                height: auto;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
                 @include montserrat-bold(16, 19.5);
                 margin-bottom: flex-size(4);
             }
 
             .book-card__review {
+                position: relative;
                 display: flex;
-                gap: flex-size(6);
+                gap: flex-size(1);
                 margin-bottom: flex-size(16);
+                align-items: center;
+
+                .star {
+                    width: flex-size(12);
+                    height: flex-size(12);
+                }
 
                 .book-card__text {
                     @include open-sans-regular(10, 13.62);
+                    margin-left: flex-size(5);
                 }
             }
 
             .book-card__description {
+                width: flex-size(176);
+                height: auto;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
                 @include open-sans-regular(10, 13.62);
                 margin-bottom: flex-size(16);
             }
@@ -311,11 +364,217 @@
 }
 
 .btn {
+    margin-top: auto;
     width: flex-size(176);
     height: flex-size(45);
+    flex-shrink: 0;
     background-color: $base-background-color;
     @include montserrat-bold(8, 9.75, $base-buttons-color);
     text-transform: uppercase;
     border: flex-size(1) solid $base-buttons-color;
     cursor: pointer;
+}
+
+@media screen and (max-width: 320px) {
+
+    .burger {
+        display: flex;
+    }
+
+    .header-burger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .aside {
+        display: none;
+    }
+
+    .header {
+
+        justify-content: space-between;
+
+        .header-nav {
+            display: none;
+        }
+
+        .header__h1 {
+            margin-left: 3.1vw;
+        }
+
+        .header-user-panel {
+            margin: 0 3.2vw 0 0;
+
+            .header-user-panel__container {
+                .header-user-panel__user {
+                    width: 6px;
+                    height: 6px;
+                }
+
+                .header-user-panel__search {
+                    width: 6px;
+                    height: 6px;
+                }
+
+                .header-user-panel__shop-bag {
+                    width: 6px;
+                    height: 6px;
+                }
+
+                .cart {
+                    width: 4px;
+                    height: 4px;
+                    top: 11px;
+                    left: 2px;
+                    font-family: "Montserrat";
+                    font-weight: 500;
+                    font-size: 3px;
+                    line-height: 1.15;
+
+                }
+            }
+        }
+    }
+
+    .slider {
+
+        margin: 0;
+        .slider-change-promo,
+        .slider-top-promo {
+            display: none;
+        }
+
+        .slider-banner {
+            width: 94%;
+        }
+
+        .slider-switcher {
+            .switcher {
+                width: 10px;
+                height: 10px;
+            }
+        }
+    }
+
+    .book-cards-table {
+        top: auto;
+        left: 3.1vw;
+        width: 94%;
+
+        .book-cards__container {
+            width: 100%;
+            justify-content: space-between;
+
+            .book-card {
+                width: 45%;
+                height: 100px;
+
+                .book-card__cover {
+                    width: 50%;
+                    height: 100%;
+                }
+
+                .book-card__filling {
+                    width: 45%;
+                    height: 100%;
+
+                    .book-card__autor {
+                        font-size: 5px;
+                        line-height: 1.15;
+                    }
+
+                    .book-card__name {
+                        font-size: 5px;
+                        line-height: 1.15;
+                    }
+
+                    .book-card__description {
+                        font-size: 5px;
+                        line-height: 1.15;
+                    }
+
+                    .book-card__review {
+                        .book-card__text {
+                            font-size: 5px;
+                                line-height: 1.15;
+                        }
+
+                        .star {
+                            width: 4px;
+                            height: 4px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .btn {
+        width: 60px;
+        height: 15px;
+    }
+
+    .header-burger {
+        position: relative;
+        flex-direction: column;
+
+        .mobile__header-nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            background-color: #FFFFFF;
+            z-index: 1;
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+            top: 0;
+            font-size: 10px;
+            line-height: 1.15;
+            list-style-type: none;
+            font-family: 'Montserrat';
+            font-weight: 500;
+            margin: 15px 0 0 0;
+            padding: 5px 0 5px 0;
+            text-align: center;
+            box-shadow: 0px 0px 0.69vw 0px rgba(0, 0, 0, 0.1)
+        }
+    }
+
+    .main-burger {
+        position: relative;
+        flex-direction: column;
+
+        .mobile__sorting-list {
+            display: none;
+            position: absolute;
+            background-color: #FFFFFF;
+            z-index: 1;
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+            top: 0;
+            font-size: 10px;
+            line-height: 1.15;
+            list-style-type: none;
+            font-family: 'Montserrat';
+            font-weight: 500;
+            margin: 15px 0 0 0;
+            padding: 5px 0 5px 0;
+            text-align: center;
+            box-shadow: 0px 0px 0.69vw 0px rgba(0, 0, 0, 0.1)
+        }
+    }
+
+    .active {
+        font-family: 'Montserrat';
+        font-weight: 700;
+        font-size: 10px;
+        line-height: 1.15;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        background-image: none;
+        left: 0;
+    }
 }
